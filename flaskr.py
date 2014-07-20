@@ -3,8 +3,7 @@ from sqlite3 import dbapi2 as sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
 
-
-# create our little application :)
+#creates the application
 app = Flask(__name__)
 
 # Load default config and override config from an environment variable
@@ -33,12 +32,6 @@ def init_db():
             db.cursor().executescript(f.read())
         db.commit()
 
-
-# @app.cli.command('initdb')
-# def initdb_command():
-    # """Creates the database tables."""
-    # init_db()
-    # print('Initialized the database.')
 
 
 def get_db():
